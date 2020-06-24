@@ -2894,10 +2894,12 @@ void plc_router_save_report_meter_event_data(INT16U meter_idx,INT8U *meter_no,IN
         else if(check_is_all_ch(data,(datalen > 12) ? 12 : datalen,0x00))
         #endif
         {
-            //ctrl_flag = 0x00;
-            //fwrite_array(meter_idx,PIM_METER_REPORT_EVENT_STATE,&ctrl_flag,1);
-			read_ctrl.ctrl_flag = 0x00;
-            fwrite_array(meter_idx,PIM_METER_REPORT_EVENT_STATE,read_ctrl.value,sizeof(EVENT_READ_CTRL));
+            if(meter_doc.protocol == 30)//GB645_2007
+            {
+				read_ctrl.ctrl_flag = 0x00;
+            	fwrite_array(meter_idx,PIM_METER_REPORT_EVENT_STATE,read_ctrl.value,sizeof(EVENT_READ_CTRL));
+
+            }
         }
         else
         {
