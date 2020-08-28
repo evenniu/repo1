@@ -5032,6 +5032,7 @@ BOOLEAN prepare_read_item_curve(READ_PARAMS *read_params,INT8U* frame,INT8U* fra
     mask_idx = 0;
     meter_idx = bin2_int16u(read_params->meter_doc.meter_idx);
 
+    
     #ifdef __MEXICO_CIU__
     if(0xAA == read_params->snd_rail_2_ciu)
     {
