@@ -1,5 +1,3 @@
-#ifndef __READ_METER_SAVE_DATA_H__
-#define __READ_METER_SAVE_DATA_H__
 INT8U save_read_data(READ_PARAMS *read_params,INT8U* frame,INT8U* frame_len);
 INT8U save_read_data_GB645_2007(READ_PARAMS *read_params,INT8U* frame,INT8U* frame_len);
 void trans_phy_cur_2_cycle_day(INT8U phy[4]);
