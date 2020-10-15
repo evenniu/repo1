@@ -56,7 +56,8 @@ INT8U check_validity_curdata_to_holddata(INT8U port,INT8U phy_idx,INT8U read_typ
 }
 INT8U save_read_data_GB645_2007(READ_PARAMS *read_params,INT8U* frame,INT8U* frame_len)
 {
-    INT32U item;
+/*
+ * INT32U item;
     INT16U block_begin_idx = 0,idx_1;
     READ_WRITE_DATA phy;
     tagPROTOCOL_LIB pLib;
@@ -80,7 +81,6 @@ INT8U save_read_data_GB645_2007(READ_PARAMS *read_params,INT8U* frame,INT8U* fra
     {
         if (compare_string(read_params->meter_doc.meter_no,frame+1,6) != 0) return 0;
 
-        if(read_params->meter_doc.baud_port.port ==  COMMPORT_PLC)/*只对载波口判断*/
         {
            if(check_meter_idx_same_or_not(read_params,frame,frame_len,buffer) == FALSE)
            {
@@ -103,6 +103,7 @@ INT8U save_read_data_GB645_2007(READ_PARAMS *read_params,INT8U* frame,INT8U* fra
         return 0;
     }
     #endif
+    */
    #ifdef __COUNTRY_ISRAEL__
    //广播设置任务的响应报文
    if(bin2_int32u(read_params->item) == 0xFFFFFFAA)
